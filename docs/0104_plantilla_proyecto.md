@@ -6,7 +6,7 @@
 
 |||
 |-|-|
-|**Nombre de la app**|Pocket Poker|
+|**Nombre de la app**|PocketPoker|
 |**Autor/a**|Alejandro Millán Polvorosa|
 |**Fecha**|19/09/2026|
 
@@ -16,7 +16,8 @@
 
 > Qué hace tu app y para quién, en una sola frase.
 
-Una app que permite jugar al póker sin baraja ni fichas físicas, en cualquier lugar y está dirigido a cualquier publico.
+Una app que permite la gestión y creación de partidas, para en un futuro poder jugar al póker sin baraja ni fichas físicas,
+en cualquier lugar y está dirigido a cualquier publico.
 
 
 
@@ -24,13 +25,16 @@ Una app que permite jugar al póker sin baraja ni fichas físicas, en cualquier 
 
 > ¿Qué problema resuelve? 
 
-Permite improvisar y jugar una partida de póker en cualquier lugar sin necesidad de llevar un maletín pesado de fichas ni una baraja de cartas, eliminando la incomodidad de repartir manualmente o calcular los botes sin errores.
+Permite improvisar, gestionar y crear una partida de póker en cualquier lugar, para en un futuro reimplementar su jugabilidad.
 
 
 
 > ¿Cómo se resuelve hoy sin tu app?
 
-Llevando maletines de póker (pesados e incómodos de transportar), anotando fichas de cada jugador, o jugando en aplicaciones de póker online genéricas (incluidas casas de apuestas, evitándolas) donde cada jugador está aislado en su pantalla sin la experiencia de jugar en grupo cara a cara.
+Llevando maletines de póker (pesados e incómodos de transportar), anotando fichas de cada jugador,
+o jugando en aplicaciones de póker online genéricas (incluidas casas de apuestas, evitándolas)
+donde cada jugador está aislado en su pantalla sin la experiencia de jugar en grupo cara a cara.
+Es decir requiere una gestión manual.
 
 
 
@@ -38,8 +42,10 @@ Llevando maletines de póker (pesados e incómodos de transportar), anotando fic
 
 > ¿Quién la va a usar? 
 
-Alex, 21 años, estudiante de ciclo superior. Le gusta quedar los fines de semana con sus amigos en casa de alguno de ellos. Maneja el móvil con total soltura. Abriría la app al inicio de la partida y la mantendría activa en sesiones cortas e intensas de pocos segundos en cada turno de juego, pudiendo mantenerla en segundo plano. Una pantalla principal, de tipo table o Android tv (o similar) sería el centro de la mesa. Si la app falla puntualmente no sería un drama, ya que podría reconectarse a la partida, recuperando su progreso.
-
+Alex, 21 años, estudiante de ciclo superior. Le gusta quedar los fines de semana con sus amigos en casa de alguno de ellos.
+Maneja el móvil con total soltura. Abriría la app al inicio de la partida y la mantendría activa en sesiones cortas e intensas de pocos segundos en cada turno de juego,
+pudiendo mantenerla en segundo plano. Una pantalla principal, de tipo table o Android tv (o similar) sería el centro de la mesa.
+Si la app falla puntualmente no sería un drama, ya que podría reconectarse a la partida, recuperando su progreso.
 
 
 ## 4 · Funcionalidades
@@ -48,27 +54,26 @@ Alex, 21 años, estudiante de ciclo superior. Le gusta quedar los fines de seman
 
 |#|Funcionalidad|
 |-|-|
-|F1|Crear o unirse a una mesa local de póker asignando un stack inicial de fichas a cada jugador.|
-|F2|Visualizar las cartas privadas de la mano en el teléfono móvil e interactuar enviando acciones a la mesa (Pasar, Apostar, Retirarse).|
-|F3|Mostrar las cartas comunitarias y gestionar automáticamente las rondas de apuestas y el bote acumulado en la pantalla principal/mesa.|
+|F1|Creación de la mesa general, con su propia configuración para cada partida.
+|F2|Unirse a una partida ya creada, accediendo con un jugador ya creado o permitiendo crear uno nuevo.
+|F3|Zona de historial/estadísticas, en la que poder consultar partidas pasadas o datos propios de cada jugador.
 
 ### Opcionales (si sobra tiempo)
 
-|#|Funcionalidad|
-|-|-|
-|O1|Guardar un historial de partidas locales con el balance de victorias y fichas de cada jugador.|
-|O2|Personalizar el tapete visual de la mesa y el reverso de la baraja.|
+| #  |Funcionalidad|
+|----|-|
+| O1 |Personalizar el tapete visual de la mesa y el reverso de la baraja.|
 
 
 
 ## 5 · Pantallas
 
-|Pantalla|Para qué sirve|Se llega desde|
-|-|-|-|
-|Inicio|Elegir modo de uso: crear mesa (pantalla central) o unirse como jugador.|(arranque)|
-|Mesa Central (Tablet/TV)|Muestra el tapete de juego, las cartas comunitarias, el bote total y el turno activo.|Inicio|
-|Mano del Jugador (Móvil)|Interfaz privada del jugador para ver sus 2 cartas ocultas, su stack de fichas y los botones de apuesta.|Inicio|
-|<br /><br />Historial / Estadísticas<br /><br />|Consultar el registro de partidas pasadas y los balances de fichas acumulados.|Inicio|
+| Pantalla                       | Para qué sirve                                                                                                         |Se llega desde|
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------|-|
+| Inicio                         | Diferentes botones para el acceso a: Creación y Configuración de la mesa, Unirse a una partida, Historial/Estadísticas |(arranque)|
+| Configuración Mesa             | Configuración de la mesa de juego y botón para iniciar su creación.                                                    |Inicio|
+| Unión a partida/Config.Jugador | Zona de elección de jugador ya creado o creación de un nuevo jugador.                                                  |Inicio|
+| Historial / Estadísticas       | Consultar el registro de partidas pasadas y los balances de propio de cada jugador                                     |Inicio|
 
 
 
@@ -82,7 +87,6 @@ Alex, 21 años, estudiante de ciclo superior. Le gusta quedar los fines de seman
 |-|-|-|
 |Jugador|ID, nombre, foto de perfil, fichas totales...|1, "Carlos", "carlos.jpg", 1500...|
 |Partida|ID, fecha, bote final, id ganador...|102, "12/10/2026", 4500, 1...|
-|Mano|ID, id partida, cartas mesa, bote actual...|55, 102, "As-Corazones, 10-Picas", 300...|
 
 
 
@@ -90,12 +94,12 @@ Alex, 21 años, estudiante de ciclo superior. Le gusta quedar los fines de seman
 
 > Apartado obligatorio: ninguna casilla puede quedar vacía.
 
-|Requisito|Dónde encaja en tu app|Tema|
-|-|-|-|
-|**Persistencia de datos** — la información sobrevive al cerrar la app|Guardado local de los datos del perfil de usuario, ajustes de partidas e historial de estadísticas...|4|
-|**Servicio web** — la app consulta datos por internet|Sincronización en tiempo real del estado del juego (reparto de cartas, bote, turnos) entre dispositivos...|5|
-|**Sensor o localización**|Acelerómetro/Giroscopio: Detectar el movimiento de agitar o poner el móvil boca abajo sobre la mesa para retirarse de la mano (Fold). <br />Cámara: Escanear un código QR en la mesa para unirse rápidamente.|6|
-|**Contenido multimedia** — foto, audio, vídeo o animación|Reproducción de efectos de sonido (deslice de cartas, sonido de fichas al apostar), animaciones al ganar el bote, carga de foto de perfil tomada con la cámara, a parte de las imágenes de las cartas, tapete...|7|
+| Requisito                | Dónde encaja en tu app                                                                                                                                                                                                                                             |Tema|
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-|
+| **Persistencia de datos** — la información sobrevive al cerrar la app | Guardado local de los datos del perfil de usuario, ajustes de partidas e historial de estadísticas...                                                                                                                                                              |4|
+| **Servicio web** — la app consulta datos por internet| Consulta/sincronización remota para validar la existencia de partidas creadas en red o descargar avatares/datos de jugadores globales.                                                                                        |5|
+| **Sensor o localización**| Uso del acelerómetro/giroscopio para detectar gestos físicos (por ejemplo, agitar el dispositivo para reiniciar el formulario de configuración...) o geolocalización GPS para sugerir el nombre de la mesa según la ubicación actual (ej. "Partida en Pontevedra"). |6|
+| **Contenido multimedia** — foto, audio, vídeo o animación | Captura y almacenamiento de la foto de perfil del jugador usando la cámara/galería del dispositivo, efectos de sonido para los botones de acción e inclusión de animaciones en la interfaz.                                                                        |7|
 
 
 
@@ -103,8 +107,7 @@ Alex, 21 años, estudiante de ciclo superior. Le gusta quedar los fines de seman
 
 |Lo que me preocupa|Plan B|
 |-|-|
-|Dificultades en la conexión entre dispositivos en tiempo real.|Adaptarla a un simple modo de pasar y jugar en único dispositivo móvil, manteniendo el resto de lógica.|
-|Aplicar de manera adecuada la lógica del póker(reparto y barajar, evaluar manos, reparto bote...)|Simplificar la reglas, o usar alguna librería externa.|
+|Que la gestión de imágenes de perfil (fotos tomadas con la cámara) ralentice las listas de jugadores o consuma demasiada memoria.|Utilizar una librería eficiente de carga de imágenes o limitar la personalización a avatares vectoriales predefinidos de la app si hay problemas de rendimiento.
 
 
 
