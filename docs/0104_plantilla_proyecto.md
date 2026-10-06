@@ -80,7 +80,8 @@ Si la app falla puntualmente no sería un drama, ya que podría reconectarse a l
 
 ## 6 · Bocetos
 
-![Boceto_Proyecto.jpg](res/Boceto_Proyecto.jpg)
+![Boceto InicioCrearUnirse.jpg](res/Boceto%20InicioCrearUnirse.jpg)
+![Boceto Historial.jpg](res/Boceto%20Historial.jpg)
 
 ## 7 · Qué datos guarda la app
 
