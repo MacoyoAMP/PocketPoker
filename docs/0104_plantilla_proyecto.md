@@ -4,11 +4,11 @@
 
 ## 0 · Datos
 
-|||
-|-|-|
-|**Nombre de la app**|PocketPoker|
-|**Autor/a**|Alejandro Millán Polvorosa|
-|**Fecha**|19/09/2026|
+||                            |
+|-|----------------------------|
+|**Nombre de la app**| PocketPoker                |
+|**Autor/a**| Alejandro Millán Polvorosa |
+|**Fecha**| 06/09/2026                 |
 
 
 
@@ -25,7 +25,8 @@ en cualquier lugar y está dirigido a cualquier publico.
 
 > ¿Qué problema resuelve? 
 
-Permite improvisar, gestionar y crear una partida de póker en cualquier lugar, para en un futuro reimplementar su jugabilidad.
+Permite improvisar, gestionar y crear una partida de póker en cualquier lugar, para en un futuro reimplementar su jugabilidad
+en multidispositivo, pudiendo utilizarla solo en modo local como gestor de fichas, ciegas, eliminaciones...(Modo local con cartas y fichas físicas)
 
 
 
@@ -34,7 +35,7 @@ Permite improvisar, gestionar y crear una partida de póker en cualquier lugar, 
 Llevando maletines de póker (pesados e incómodos de transportar), anotando fichas de cada jugador,
 o jugando en aplicaciones de póker online genéricas (incluidas casas de apuestas, evitándolas)
 donde cada jugador está aislado en su pantalla sin la experiencia de jugar en grupo cara a cara.
-Es decir requiere una gestión manual.
+Es decir requiere una gestión muy manual.
 
 
 
@@ -54,26 +55,26 @@ Si la app falla puntualmente no sería un drama, ya que podría reconectarse a l
 
 |#|Funcionalidad|
 |-|-|
-|F1|Creación de la mesa general, con su propia configuración para cada partida.
-|F2|Unirse a una partida ya creada, accediendo con un jugador ya creado o permitiendo crear uno nuevo.
-|F3|Zona de historial/estadísticas, en la que poder consultar partidas pasadas o datos propios de cada jugador.
+|F1|Creación de la mesa general, con su propia configuración para cada partida.(Selección multidispositivo o modo local con cartas y fichas fisicas)
+|F2|Unirse a una partida ya creada, accediendo con un jugador ya creado o permitiendo crear uno nuevo. (Para modo multidispositivo)
+|F3|Zona de historial/estadísticas, en la que poder consultar partidas pasadas o datos propios de cada jugador(tanto para modo local como multidispositivo)
 
 ### Opcionales (si sobra tiempo)
 
-| #  |Funcionalidad|
-|----|-|
-| O1 |Personalizar el tapete visual de la mesa y el reverso de la baraja.|
+| #  | Funcionalidad                                                                                   |
+|----|-------------------------------------------------------------------------------------------------|
+| O1 | Personalizar el tapete visual de la mesa y el reverso de la baraja. (esto último en modo multi) |
 
 
 
 ## 5 · Pantallas
 
-| Pantalla                       | Para qué sirve                                                                                                         |Se llega desde|
-|--------------------------------|------------------------------------------------------------------------------------------------------------------------|-|
-| Inicio                         | Diferentes botones para el acceso a: Creación y Configuración de la mesa, Unirse a una partida, Historial/Estadísticas |(arranque)|
-| Configuración Mesa             | Configuración de la mesa de juego y botón para iniciar su creación.                                                    |Inicio|
-| Unión a partida/Config.Jugador | Zona de elección de jugador ya creado o creación de un nuevo jugador.                                                  |Inicio|
-| Historial / Estadísticas       | Consultar el registro de partidas pasadas y los balances de propio de cada jugador                                     |Inicio|
+| Pantalla                       | Para qué sirve                                                                                                                |Se llega desde|
+|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-|
+| Inicio                         | Diferentes botones para el acceso a: Creación y Configuración de la mesa, Unirse a una partida(Multi), Historial/Estadísticas |(arranque)|
+| Configuración Mesa             | Configuración de la mesa de juego y botón para iniciar su creación.                                                           |Inicio|
+| Unión a partida/Config.Jugador | Zona de elección de jugador ya creado o creación de un nuevo jugador e introducción del id de la mesa a la que unirse.        |Inicio|
+| Historial / Estadísticas       | Consultar el registro de partidas pasadas y los balances de propio de cada jugador                                            |Inicio|
 
 
 
