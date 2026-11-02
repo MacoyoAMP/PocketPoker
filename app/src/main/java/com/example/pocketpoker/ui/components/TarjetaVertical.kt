@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pocketpoker.JugadorPartida
 import com.example.pocketpoker.Partida
 
 @Composable
@@ -35,39 +36,21 @@ fun TarjetaVertical(
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(14.dp)) {
-            Text(text = "MESA ${partida.idMesa}",
+            Text(text = "MESA ${partida.numeroMesa}",
                 color = Color(0xFFf0bc50),
                 fontSize = 18.sp,
                 fontWeight= FontWeight.Bold )
             Spacer(modifier = Modifier.padding(6.dp))
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween) {
-                Text(
-                    text = "DÍA: ${partida.fecha}",
-                    color = Color.LightGray,
-                    fontSize = 13.sp
-                )
-                Text(
-                    text = "BOTE: ${partida.boteFichas}",
-                    color = Color(0xFFF0BC50),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.Bold
-                )
+                TextoEtiquetaValor(etiqueta = "DÍA: ", valor = partida.fecha)
+                TextoEtiquetaValor(etiqueta = "BOTE: ", valor = partida.boteTotal, colorValor = Color(0xFFf0bc50))
             }
             Spacer(modifier = Modifier.padding(4.dp))
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween) {
-                Text(
-                    text = "MODO: ${partida.modo}",
-                    color = Color.LightGray,
-                    fontSize = 13.sp
-                )
-                Text(
-                    text = "GANADOR: ${partida.ganador}",
-                    color = Color(0xFF3a995d),
-                    fontSize = 13.sp,
-                    fontWeight = FontWeight.Bold
-                )
+                TextoEtiquetaValor(etiqueta = "MODO: ", valor = partida.modo)
+                TextoEtiquetaValor(etiqueta = "GANADOR: ", valor = partida.ganadorNombre, colorEtiqueta = Color(0xFF5de077))
             }
         }
     }
@@ -78,11 +61,21 @@ fun TarjetaVertical(
 fun TarjetaVerticalPreview() {
     TarjetaVertical(
         partida = Partida(
-            idMesa = "#9999",
+            id = "1",
+            numeroMesa = "#0001",
             fecha = "28/10/2026",
+            duracion = "2h 15m",
             modo = "Local",
-            boteFichas = "15.000 Fichas",
-            ganador = "Alex"
+            boteTotal = "15.000 Fichas",
+            ganadorNombre = "Alex",
+            totalManos = 48,
+            mayorBoteGanado = "4.200 (Alex)",
+            ciegasFinales = "100 / 200",
+            jugadores = listOf(
+                JugadorPartida(1, "Alex", esGanador = true, fichasGanadasPerdidas = 8500),
+                JugadorPartida(2, "Cris", esGanador = false, fichasGanadasPerdidas = -3000),
+                JugadorPartida(3, "Andrés", esGanador = false, fichasGanadasPerdidas = -5500)
+            )
         )
     )
 }
