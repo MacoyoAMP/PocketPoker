@@ -22,7 +22,7 @@ import com.example.pocketpoker.JugadorPartida
 import com.example.pocketpoker.Partida
 
 @Composable
-fun TarjetaVertical(
+fun TarjetaMesaDetalle(
     partida: Partida,
     modifier: Modifier= Modifier
 ){
@@ -43,14 +43,14 @@ fun TarjetaVertical(
             Spacer(modifier = Modifier.padding(6.dp))
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween) {
-                TextoEtiquetaValor(etiqueta = "DÍA: ", valor = partida.fecha)
-                TextoEtiquetaValor(etiqueta = "BOTE: ", valor = partida.boteTotal, colorValor = Color(0xFFf0bc50))
+                TextoEtiquetaValor(etiqueta = "DÍA ", valor = partida.fecha)
+                TextoEtiquetaValor(etiqueta = "DURACIÓN ", valor = partida.duracion)
             }
             Spacer(modifier = Modifier.padding(4.dp))
             Row(modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween) {
                 TextoEtiquetaValor(etiqueta = "MODO: ", valor = partida.modo)
-                TextoEtiquetaValor(etiqueta = "GANADOR: ", valor = partida.ganadorNombre, colorEtiqueta = Color(0xFF5de077))
+                TextoEtiquetaValor(etiqueta = "TOTAL MANOS: ", valor = partida.totalManos.toString())
             }
         }
     }
@@ -58,8 +58,8 @@ fun TarjetaVertical(
 
 @Preview(showBackground = true)
 @Composable
-fun TarjetaVerticalPreview() {
-    TarjetaVertical(
+fun TarjetaMesaDetallePreview() {
+    TarjetaMesaDetalle(
         partida = Partida(
             id = "1",
             numeroMesa = "#0001",

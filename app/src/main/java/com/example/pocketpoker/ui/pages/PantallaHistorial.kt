@@ -22,7 +22,7 @@ import com.example.pocketpoker.Partida
 import com.example.pocketpoker.ui.components.Cabecera
 import com.example.pocketpoker.ui.components.Proximamente
 import com.example.pocketpoker.ui.components.SelectorPestañas
-import com.example.pocketpoker.ui.components.TarjetaVertical
+import com.example.pocketpoker.ui.components.TarjetaMesaHistorial
 
 @Composable
 fun PantallaHistorial(
@@ -59,7 +59,7 @@ fun PantallaHistorial(
                     modifier = Modifier.fillMaxSize()
                 ) {
                     items(listaPartidas) { partidaIndividual ->
-                        TarjetaVertical(partida = partidaIndividual)
+                        TarjetaMesaHistorial(partida = partidaIndividual)
                     }
                 }
             } else {
@@ -69,7 +69,7 @@ fun PantallaHistorial(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PantallaHistorialPreview() {
     PantallaHistorial()

@@ -1,16 +1,19 @@
 package com.example.pocketpoker.ui.components
 
-import android.R
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -22,7 +25,7 @@ import com.example.pocketpoker.JugadorPartida
 import com.example.pocketpoker.Partida
 
 @Composable
-fun TarjetaVerticalJugadores(
+fun TarjetaEstadisticasJugadores(
     partida: Partida,
     modifier: Modifier= Modifier
 ){
@@ -46,9 +49,12 @@ fun TarjetaVerticalJugadores(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 6.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
+                        .padding(horizontal = 12.dp, vertical = 6.dp)) {
+                    Icon(
+                        imageVector = Icons.Default.AccountCircle,
+                        contentDescription = "Foto de perfil",
+                        tint = Color.White
+                    )
                     Text(text ="1.${partida.jugadores[0].nombre}",
                         color = Color.White,
                         fontSize = 20.sp)
@@ -57,6 +63,7 @@ fun TarjetaVerticalJugadores(
                             color = Color(0xFF5de077),
                             fontSize = 20.sp)
                     }
+                    Spacer(modifier = Modifier.weight(1f))
                     Text(text = partida.jugadores[0].fichasGanadasPerdidas.toString(),
                         color = if (partida.jugadores[0].fichasGanadasPerdidas >= 0) Color(0xFF5de077) else Color(0xFFE57373),
                         fontSize = 20.sp)
@@ -69,9 +76,12 @@ fun TarjetaVerticalJugadores(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 6.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
+                        .padding(horizontal = 12.dp, vertical = 6.dp)) {
+                    Icon(
+                        imageVector = Icons.Default.AccountCircle,
+                        contentDescription = "Foto de perfil",
+                        tint = Color.White
+                    )
                     Text("2.${partida.jugadores[1].nombre}",
                         color = Color.White,
                         fontSize = 20.sp)
@@ -80,6 +90,7 @@ fun TarjetaVerticalJugadores(
                             color = Color(0xFF5de077),
                             fontSize = 20.sp)
                     }
+                    Spacer(modifier = Modifier.weight(1f))
                     Text(text = partida.jugadores[1].fichasGanadasPerdidas.toString(),
                         color = if (partida.jugadores[1].fichasGanadasPerdidas >= 0) Color(0xFF5de077) else Color(0xFFE57373),
                         fontSize = 20.sp)
@@ -92,9 +103,12 @@ fun TarjetaVerticalJugadores(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 6.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
+                        .padding(horizontal = 12.dp, vertical = 6.dp)){
+                    Icon(
+                        imageVector = Icons.Default.AccountCircle,
+                        contentDescription = "Foto de perfil",
+                        tint = Color.White
+                    )
                     Text("3.${partida.jugadores[2].nombre}",
                         color = Color.White,
                         fontSize = 20.sp)
@@ -103,6 +117,7 @@ fun TarjetaVerticalJugadores(
                             color = Color(0xFF5de077),
                             fontSize = 20.sp)
                     }
+                    Spacer(modifier = Modifier.weight(1f))
                     Text(text = partida.jugadores[2].fichasGanadasPerdidas.toString(),
                         color = if (partida.jugadores[2].fichasGanadasPerdidas >= 0) Color(0xFF5de077) else Color(0xFFE57373),
                         fontSize = 20.sp)
@@ -114,8 +129,8 @@ fun TarjetaVerticalJugadores(
 
 @Preview(showBackground = true)
 @Composable
-fun TarjetaVerticalJugadoresPreview(){
-    TarjetaVerticalJugadores(partida = Partida(
+fun TarjetaEstadisticasJugadoresPreview(){
+    TarjetaEstadisticasJugadores(partida = Partida(
         id = "1",
         numeroMesa = "#0001",
         fecha = "28/10/2026",

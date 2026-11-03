@@ -15,11 +15,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.pocketpoker.JugadorPartida
 import com.example.pocketpoker.Partida
 
 @Composable
-fun TarjetaVerticalDatosJuego(
+fun TarjetaDatosJuego(
     partida: Partida,
     modifier: Modifier = Modifier
 ){
@@ -35,21 +36,19 @@ fun TarjetaVerticalDatosJuego(
         ) {
             Row(modifier = Modifier.padding(8.dp)
                 ) {
-                Text(text = "DATOS DE JUEGO", color = Color(0xFFf0bc50), fontWeight = FontWeight.Bold)
+                Text(text = "DATOS DE JUEGO", color = Color(0xFFf0bc50),fontSize = 20.sp, fontWeight = FontWeight.Bold)
             }
             Row(modifier = Modifier.padding(8.dp)){
-                Text(text = "Mayor Bote Ganado: ",
-                    color = Color.Gray)
-                Text(partida.mayorBoteGanado, color = Color.White)
+                Text(text = "Mayor Bote Ganado: ", color = Color.Gray, fontSize = 15.sp,fontWeight = FontWeight.Bold)
+                Text(partida.mayorBoteGanado, color = Color.White,fontSize = 15.sp,fontWeight = FontWeight.Bold)
             }
             Row(modifier = Modifier.padding(8.dp)) {
-                Text(text = "Ciegas Finales: ",
-                    color = Color.Gray)
-                Text(partida.ciegasFinales, color = Color.White)
+                Text(text = "Ciegas Finales: ",color = Color.Gray, fontSize = 15.sp,fontWeight = FontWeight.Bold)
+                Text(partida.ciegasFinales, color = Color.White,fontSize = 15.sp,fontWeight = FontWeight.Bold)
             }
             Row(modifier = Modifier.padding(8.dp)) {
-                Text(text = "Total Manos: ", color = Color.Gray)
-                Text(text = partida.totalManos.toString(), color = Color.White)
+                Text(text = "Total Manos: ", color = Color.Gray,fontSize = 15.sp,fontWeight = FontWeight.Bold)
+                Text(text = partida.totalManos.toString(), color = Color.White,fontSize = 15.sp,fontWeight = FontWeight.Bold)
             }
         }
     }
@@ -57,8 +56,8 @@ fun TarjetaVerticalDatosJuego(
 
 @Preview(showBackground = true)
 @Composable
-fun TarjetaVerticalDatosJuegoPreview(){
-    TarjetaVerticalDatosJuego(partida = Partida(
+fun TarjetaDatosJuegoPreview(){
+    TarjetaDatosJuego(partida = Partida(
         id = "1",
         numeroMesa = "#0001",
         fecha = "28/10/2026",

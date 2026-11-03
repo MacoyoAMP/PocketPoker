@@ -16,11 +16,10 @@ import com.example.pocketpoker.DatosPruebaPartidas
 import com.example.pocketpoker.Partida
 import com.example.pocketpoker.ui.components.Cabecera
 import com.example.pocketpoker.ui.components.CabeceraResumen
-import com.example.pocketpoker.ui.components.TarjetaVerticalDatosJuego
-import com.example.pocketpoker.ui.components.TarjetaVerticalGanador
-import com.example.pocketpoker.ui.components.TarjetaVerticalJugadores
-import com.example.pocketpoker.ui.components.TarjetaVerticalMesa
-
+import com.example.pocketpoker.ui.components.TarjetaBoteGanador
+import com.example.pocketpoker.ui.components.TarjetaDatosJuego
+import com.example.pocketpoker.ui.components.TarjetaEstadisticasJugadores
+import com.example.pocketpoker.ui.components.TarjetaMesaDetalle
 @Composable
 fun PantallaDetallePartida(
     partida: Partida = DatosPruebaPartidas.listaPartidas[0],
@@ -38,19 +37,20 @@ fun PantallaDetallePartida(
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
-            TarjetaVerticalMesa(partida=partida)
+            Spacer(modifier = Modifier.padding(5.dp))
+            TarjetaMesaDetalle(partida=partida)
             Spacer(modifier = Modifier.padding(15.dp))
             CabeceraResumen(titulo = "RESUMEN")
-            TarjetaVerticalGanador(partida = partida)
+            TarjetaBoteGanador(partida = partida)
             Spacer(modifier = Modifier.padding(15.dp))
-            TarjetaVerticalJugadores(partida = partida)
+            TarjetaEstadisticasJugadores(partida = partida)
             Spacer(modifier = Modifier.padding(15.dp))
-            TarjetaVerticalDatosJuego(partida = partida)
+            TarjetaDatosJuego(partida = partida)
         }
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PantallaDetallePartidaPreview() {
     PantallaDetallePartida()

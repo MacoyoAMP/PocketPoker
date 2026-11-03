@@ -1,5 +1,6 @@
 package com.example.pocketpoker.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,6 +25,7 @@ fun Cabecera(
 ){
     Row(modifier = modifier
         .fillMaxWidth()
+        .background(color =Color(0xFF132235))
         .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically){
         Icon(

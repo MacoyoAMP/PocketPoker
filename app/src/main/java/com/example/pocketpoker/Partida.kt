@@ -4,7 +4,7 @@ data class Partida(
     val numeroMesa: String,
     val fecha: String,
     val duracion: String,
-    val modo: String,           // "Local", "Multi", etc.
+    val modo: String,
     val boteTotal: String,
     val ganadorNombre: String,
     val totalManos: Int,

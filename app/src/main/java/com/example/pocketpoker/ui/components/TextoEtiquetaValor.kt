@@ -19,12 +19,13 @@ fun TextoEtiquetaValor(
         Text(
             text = etiqueta,
             color = colorEtiqueta,
-            fontSize = 13.sp
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Bold
         )
         Text(
             text = valor,
             color = colorValor,
-            fontSize = 13.sp,
+            fontSize = 15.sp,
             fontWeight = FontWeight.Bold
         )
     }
