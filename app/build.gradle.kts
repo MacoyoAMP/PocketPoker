@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.pocketpoker"
-    compileSdk = 34
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.pocketpoker"
