@@ -10,10 +10,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -24,31 +24,40 @@ import com.example.pocketpoker.Partida
 @Composable
 fun TarjetaMesaDetalle(
     partida: Partida,
-    modifier: Modifier= Modifier
+    modifier: Modifier = Modifier
 ){
-    Card(modifier = modifier
-        .fillMaxWidth()
-        .padding(vertical = 6.dp, horizontal = 12.dp),
-        shape= RoundedCornerShape(10.dp),
-        colors= CardDefaults.cardColors(containerColor = Color(0xFF132235)),
-        border = BorderStroke(1.dp, Color(0xFFf0bc50))
-    ){
-        Column(modifier = Modifier
+    Card(
+        modifier = modifier
             .fillMaxWidth()
-            .padding(14.dp)) {
-            Text(text = "MESA ${partida.numeroMesa}",
-                color = Color(0xFFf0bc50),
+            .padding(vertical = 6.dp, horizontal = 12.dp),
+        shape = RoundedCornerShape(10.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
+    ){
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(14.dp)
+        ) {
+            Text(
+                text = "MESA ${partida.numeroMesa}",
+                color = MaterialTheme.colorScheme.primary,
                 fontSize = 18.sp,
-                fontWeight= FontWeight.Bold )
+                fontWeight = FontWeight.Bold
+            )
             Spacer(modifier = Modifier.padding(6.dp))
-            Row(modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
                 TextoEtiquetaValor(etiqueta = "DÍA ", valor = partida.fecha)
                 TextoEtiquetaValor(etiqueta = "DURACIÓN ", valor = partida.duracion)
             }
             Spacer(modifier = Modifier.padding(4.dp))
-            Row(modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
                 TextoEtiquetaValor(etiqueta = "MODO: ", valor = partida.modo)
                 TextoEtiquetaValor(etiqueta = "TOTAL MANOS: ", valor = partida.totalManos.toString())
             }

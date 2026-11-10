@@ -1,6 +1,7 @@
 package com.example.pocketpoker.ui.components
 
 import androidx.compose.foundation.layout.Row
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
@@ -12,8 +13,8 @@ import androidx.compose.ui.unit.sp
 fun TextoEtiquetaValor(
     etiqueta: String,
     valor: String,
-    colorEtiqueta: Color = Color.LightGray,
-    colorValor: Color = Color.White
+    colorEtiqueta: Color = MaterialTheme.colorScheme.onSurfaceVariant,
+    colorValor: Color = MaterialTheme.colorScheme.onSurface
 ) {
     Row {
         Text(
