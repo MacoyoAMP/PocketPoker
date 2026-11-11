@@ -10,12 +10,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.pocketpoker.DatosPruebaPartidas
 import com.example.pocketpoker.Partida
+import com.example.pocketpoker.R
 import com.example.pocketpoker.ui.components.Cabecera
 import com.example.pocketpoker.ui.components.TarjetaMesaHistorial
+import com.example.pocketpoker.ui.components.states.TarjetaMesaHistorialState
 
 @Composable
 fun PantallaHistorial(
@@ -27,7 +30,7 @@ fun PantallaHistorial(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        Cabecera(titulo = "HISTORIAL")
+        Cabecera(titulo = stringResource(R.string.titulo_historial))
 
         Spacer(modifier = Modifier.height(8.dp))
 
@@ -35,7 +38,15 @@ fun PantallaHistorial(
             modifier = Modifier.fillMaxSize()
         ) {
             items(listaPartidas) { partidaIndividual ->
-                TarjetaMesaHistorial(partida = partidaIndividual)
+                TarjetaMesaHistorial(
+                    state = TarjetaMesaHistorialState(
+                        numeroMesa = partidaIndividual.numeroMesa,
+                        fecha = partidaIndividual.fecha,
+                        boteTotal = partidaIndividual.boteTotal,
+                        modo = partidaIndividual.modo,
+                        ganadorNombre = partidaIndividual.ganadorNombre
+                    )
+                )
             }
         }
     }

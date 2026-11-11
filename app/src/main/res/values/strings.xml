@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">PocketPoker</string>
+
+    <!-- Títulos de Pantallas y Cabeceras -->
+    <string name="titulo_historial">HISTORIAL</string>
+    <string name="titulo_detalle_partida">DETALLE DE PARTIDA</string>
+    <string name="titulo_resumen">RESUMEN</string>
+    <string name="titulo_bote_ganador">BOTE Y GANADOR</string>
+    <string name="titulo_datos_juego">DATOS DE JUEGO</string>
+    <string name="titulo_estadisticas_jugadores">ESTADÍSTICAS JUGADORES</string>
+
+    <!-- Tarjetas y Detalles -->
+    <string name="label_mesa">MESA %1$s</string>
+    <string name="label_bote_total">BOTE TOTAL</string>
+    <string name="label_ganador">GANADOR</string>
+    <string name="label_ganador_tag">(GANADOR)</string>
+    <string name="label_mayor_bote">Mayor Bote Ganado:</string>
+    <string name="label_ciegas_finales">Ciegas Finales:</string>
+    <string name="label_total_manos">Total Manos:</string>
+    <string name="label_total_manos_mayus">TOTAL MANOS:</string>
+
+    <!-- TextoEtiquetaValor -->
+    <string name="label_dia">DÍA: </string>
+    <string name="label_dia_sin_puntos">DÍA </string>
+    <string name="label_duracion">DURACIÓN </string>
+    <string name="label_modo">MODO: </string>
+    <string name="label_bote">BOTE: </string>
+
+    <!-- Accesibilidad -->
+    <string name="cd_volver">Volver</string>
+    <string name="cd_foto_perfil">Foto de perfil</string>
 </resources>

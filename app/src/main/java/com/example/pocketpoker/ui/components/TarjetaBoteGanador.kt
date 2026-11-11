@@ -17,22 +17,23 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.pocketpoker.JugadorPartida
-import com.example.pocketpoker.Partida
+import com.example.pocketpoker.R
+import com.example.pocketpoker.ui.components.states.TarjetaBoteGanadorState
 
 @Composable
 fun TarjetaBoteGanador(
-    partida: Partida,
+    state: TarjetaBoteGanadorState,
     modifier: Modifier = Modifier
 ){
     Column(modifier = modifier) {
         Row(modifier = Modifier) {
             CabeceraResumen(
-                titulo = "BOTE Y GANADOR",
+                titulo = stringResource(R.string.titulo_bote_ganador),
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier
             )
@@ -53,13 +54,13 @@ fun TarjetaBoteGanador(
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Text(
-                        text = "BOTE TOTAL",
+                        text = stringResource(R.string.label_bote_total),
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "GANADOR",
+                        text = stringResource(R.string.label_ganador),
                         color = MaterialTheme.colorScheme.secondary,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
@@ -71,7 +72,7 @@ fun TarjetaBoteGanador(
                         .padding(horizontal = 12.dp, vertical = 6.dp)
                 ) {
                     Text(
-                        text = partida.boteTotal,
+                        text = state.boteTotal,
                         color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
@@ -79,11 +80,11 @@ fun TarjetaBoteGanador(
                     Spacer(modifier = Modifier.weight(1f))
                     Icon(
                         imageVector = Icons.Default.AccountCircle,
-                        contentDescription = "Foto de perfil",
+                        contentDescription = stringResource(R.string.cd_foto_perfil),
                         tint = MaterialTheme.colorScheme.onSurface
                     )
                     Text(
-                        text = partida.ganadorNombre,
+                        text = state.ganadorNombre,
                         color = MaterialTheme.colorScheme.secondary,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
@@ -98,22 +99,9 @@ fun TarjetaBoteGanador(
 @Composable
 fun TarjetaBoteGanadorPreview(){
     TarjetaBoteGanador(
-        partida = Partida(
-            id = "1",
-            numeroMesa = "#0001",
-            fecha = "28/10/2026",
-            duracion = "2h 15m",
-            modo = "Local",
+        state = TarjetaBoteGanadorState(
             boteTotal = "15.000 Fichas",
-            ganadorNombre = "Alex",
-            totalManos = 48,
-            mayorBoteGanado = "4.200 (Alex)",
-            ciegasFinales = "100 / 200",
-            jugadores = listOf(
-                JugadorPartida(1, "Alex", esGanador = true, fichasGanadasPerdidas = 8500),
-                JugadorPartida(2, "Cris", esGanador = false, fichasGanadasPerdidas = -3000),
-                JugadorPartida(3, "Andrés", esGanador = false, fichasGanadasPerdidas = -5500)
-            )
+            ganadorNombre = "Alex"
         )
     )
 }

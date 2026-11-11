@@ -13,24 +13,28 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pocketpoker.R
 
 @Composable
 fun Cabecera(
     titulo: String,
     modifier: Modifier = Modifier
 ){
-    Row(modifier = modifier
-        .fillMaxWidth()
-        .background(MaterialTheme.colorScheme.background)
-        .padding(16.dp),
-        verticalAlignment = Alignment.CenterVertically){
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colorScheme.background)
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ){
         Icon(
             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-            contentDescription = "Volver",
+            contentDescription = stringResource(R.string.cd_volver),
             tint = MaterialTheme.colorScheme.onSurface
         )
         Spacer(modifier = Modifier.padding(16.dp))
@@ -46,5 +50,5 @@ fun Cabecera(
 @Preview
 @Composable
 fun CabeceraPreview(){
-    Cabecera(titulo = "HISTORIAL")
+    Cabecera(titulo = stringResource(R.string.titulo_historial))
 }

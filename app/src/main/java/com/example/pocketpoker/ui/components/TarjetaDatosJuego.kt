@@ -12,16 +12,17 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.pocketpoker.JugadorPartida
-import com.example.pocketpoker.Partida
+import com.example.pocketpoker.R
+import com.example.pocketpoker.ui.components.states.TarjetaDatosJuegoState
 
 @Composable
 fun TarjetaDatosJuego(
-    partida: Partida,
+    state: TarjetaDatosJuegoState,
     modifier: Modifier = Modifier
 ){
     Card(
@@ -37,7 +38,7 @@ fun TarjetaDatosJuego(
         ) {
             Row(modifier = Modifier.padding(8.dp)) {
                 Text(
-                    text = "DATOS DE JUEGO",
+                    text = stringResource(R.string.titulo_datos_juego),
                     color = MaterialTheme.colorScheme.primary,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold
@@ -45,13 +46,13 @@ fun TarjetaDatosJuego(
             }
             Row(modifier = Modifier.padding(8.dp)){
                 Text(
-                    text = "Mayor Bote Ganado: ",
+                    text = stringResource(R.string.label_mayor_bote),
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    text = partida.mayorBoteGanado,
+                    text = state.mayorBoteGanado,
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
@@ -59,13 +60,13 @@ fun TarjetaDatosJuego(
             }
             Row(modifier = Modifier.padding(8.dp)) {
                 Text(
-                    text = "Ciegas Finales: ",
+                    text = stringResource(R.string.label_ciegas_finales),
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    text = partida.ciegasFinales,
+                    text = state.ciegasFinales,
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
@@ -73,13 +74,13 @@ fun TarjetaDatosJuego(
             }
             Row(modifier = Modifier.padding(8.dp)) {
                 Text(
-                    text = "Total Manos: ",
+                    text = stringResource(R.string.label_total_manos),
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    text = partida.totalManos.toString(),
+                    text = state.totalManos.toString(),
                     color = MaterialTheme.colorScheme.onSurface,
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold
@@ -93,22 +94,10 @@ fun TarjetaDatosJuego(
 @Composable
 fun TarjetaDatosJuegoPreview(){
     TarjetaDatosJuego(
-        partida = Partida(
-            id = "1",
-            numeroMesa = "#0001",
-            fecha = "28/10/2026",
-            duracion = "2h 15m",
-            modo = "Local",
-            boteTotal = "15.000 Fichas",
-            ganadorNombre = "Alex",
-            totalManos = 48,
+        state = TarjetaDatosJuegoState(
             mayorBoteGanado = "4.200 (Alex)",
             ciegasFinales = "100 / 200",
-            jugadores = listOf(
-                JugadorPartida(1, "Alex", esGanador = true, fichasGanadasPerdidas = 8500),
-                JugadorPartida(2, "Cris", esGanador = false, fichasGanadasPerdidas = -3000),
-                JugadorPartida(3, "Andrés", esGanador = false, fichasGanadasPerdidas = -5500)
-            )
+            totalManos = 48
         )
     )
 }
