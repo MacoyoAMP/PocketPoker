@@ -29,4 +29,6 @@
     <!-- Accesibilidad -->
     <string name="cd_volver">Volver</string>
     <string name="cd_foto_perfil">Foto de perfil</string>
+
+    <string name="cd_avatar_jugador">Avatar de %1$s</string>
 </resources>
