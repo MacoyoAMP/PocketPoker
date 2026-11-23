@@ -29,6 +29,12 @@
     <!-- Accesibilidad -->
     <string name="cd_volver">Volver</string>
     <string name="cd_foto_perfil">Foto de perfil</string>
-
     <string name="cd_avatar_jugador">Avatar de %1$s</string>
+
+    <!-- Login -->
+    <string name="titulo_login">POCKET POKER</string>
+    <string name="label_usuario">Usuario</string>
+    <string name="label_contrasena">Contraseña</string>
+    <string name="btn_entrar">ENTRAR</string>
+    <string name="error_login_vacio">Rellena usuario y contraseña</string>
 </resources>

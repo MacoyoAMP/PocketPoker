@@ -9,12 +9,14 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.pocketpoker.DatosPruebaPartidas
-import com.example.pocketpoker.Partida
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pocketpoker.R
 import com.example.pocketpoker.ui.components.Cabecera
 import com.example.pocketpoker.ui.components.CabeceraResumen
@@ -22,23 +24,39 @@ import com.example.pocketpoker.ui.components.TarjetaBoteGanador
 import com.example.pocketpoker.ui.components.TarjetaDatosJuego
 import com.example.pocketpoker.ui.components.TarjetaEstadisticasJugadores
 import com.example.pocketpoker.ui.components.TarjetaMesaDetalle
+import com.example.pocketpoker.ui.components.states.CabeceraState
 import com.example.pocketpoker.ui.components.states.JugadorEstadisticaState
 import com.example.pocketpoker.ui.components.states.TarjetaBoteGanadorState
 import com.example.pocketpoker.ui.components.states.TarjetaDatosJuegoState
 import com.example.pocketpoker.ui.components.states.TarjetaEstadisticasJugadoresState
 import com.example.pocketpoker.ui.components.states.TarjetaMesaDetalleState
+import com.example.pocketpoker.ui.viewmodels.DetallePartidaViewModel
 
 @Composable
 fun PantallaDetallePartida(
-    partida: Partida = DatosPruebaPartidas.listaPartidas[0],
+    partidaId: String? = null,
+    detalleViewModel: DetallePartidaViewModel = viewModel(),
+    onVolverClick: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
+    LaunchedEffect(partidaId) {
+        detalleViewModel.cargarPartida(partidaId)
+    }
+
+    val uiState by detalleViewModel.uiState.collectAsState()
+    val partida = uiState.partida
+
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        Cabecera(titulo = stringResource(R.string.titulo_detalle_partida))
+        Cabecera(
+            state = CabeceraState(
+                titulo = stringResource(R.string.titulo_detalle_partida),
+                onVolverClick = onVolverClick
+            )
+        )
 
         Column(
             modifier = Modifier
