@@ -9,11 +9,11 @@
 * **Resolución (dp):** 393 x 830 dp
 * **Densidad:** 440 dpi (`xxhdpi`)
 
-![image1.png](res/image1.png)
+![image1.png](../res/image1.png)
 
-![image2.png](res/image2.png)
+![image2.png](../res/image2.png)
 
-![image3.png](res/image3.png)
+![image3.png](../res/image3.png)
 
 ---
 
@@ -24,11 +24,11 @@
 * **Resolución (dp):** 412 x 915 dp
 * **Densidad:** 420 dpi (`xxhdpi`)
 
-![image4.png](res/image4.png)
+![image4.png](../res/image4.png)
 
-![image5.png](res/image5.png)
+![image5.png](../res/image5.png)
 
-![image6.png](res/image6.png)
+![image6.png](../res/image6.png)
 
 ---
 
@@ -39,11 +39,11 @@
 * **Resolución (dp):** 1280 x 800 dp
 * **Densidad:** 320 dpi (`xhdpi`)
 
-![image7.png](res/image7.png)
+![image7.png](../res/image7.png)
 
-![image8.png](res/image8.png)
+![image8.png](../res/image8.png)
 
-![image9.png](res/image9.png)
+![image9.png](../res/image9.png)
 
 ---
 
