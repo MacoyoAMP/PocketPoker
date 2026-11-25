@@ -34,30 +34,42 @@ import com.example.pocketpoker.ui.viewmodels.DetallePartidaViewModel
 
 @Composable
 fun PantallaDetallePartida(
+    // CAMBIA
+    // Parámetro que llega desde la navegación
     partidaId: String? = null,
+    // SIEMPRE
+    // Engancha el ViewModel propio de esta pantalla
     detalleViewModel: DetallePartidaViewModel = viewModel(),
     onVolverClick: () -> Unit = {},
+    // El modifier siempre como parámetro con valor por defecto
     modifier: Modifier = Modifier
 ) {
+    // SIEMPRE (en pantallas de detalle):
+    // Se ejecuta al entrar a la pantalla para pedirle al ViewModel que busque este ID.
     LaunchedEffect(partidaId) {
         detalleViewModel.cargarPartida(partidaId)
     }
 
+    // SIEMPRE
+    // Lee el estado del ViewModel. Si cambia allí, la pantalla se repinta sola.
     val uiState by detalleViewModel.uiState.collectAsState()
     val partida = uiState.partida
 
     Column(
+        // El modifier recibido por parámetro va SIEMPRE en la raíz Column
         modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
         Cabecera(
             state = CabeceraState(
+                // Textos fijos salen de strings.xml
                 titulo = stringResource(R.string.titulo_detalle_partida),
                 onVolverClick = onVolverClick
             )
         )
 
+        // SIEMPRE (si el detalle es largo): Permite hacer scroll vertical si no cabe en pantalla
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -65,6 +77,8 @@ fun PantallaDetallePartida(
         ) {
             Spacer(modifier = Modifier.padding(5.dp))
 
+            // CAMBIA
+            // Aquí se va poniendo los componentes pasándoles los datos de "partida"
             TarjetaMesaDetalle(
                 state = TarjetaMesaDetalleState(
                     numeroMesa = partida.numeroMesa,
@@ -87,6 +101,8 @@ fun PantallaDetallePartida(
 
             Spacer(modifier = Modifier.padding(15.dp))
 
+            // CAMBIA
+            // ".map" transforma la lista de datos reales en la lista visual que pide el componente
             TarjetaEstadisticasJugadores(
                 state = TarjetaEstadisticasJugadoresState(
                     jugadores = partida.jugadores.map { jugador ->

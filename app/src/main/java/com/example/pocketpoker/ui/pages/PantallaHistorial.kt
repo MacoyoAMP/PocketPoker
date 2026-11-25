@@ -26,11 +26,17 @@ import com.example.pocketpoker.ui.viewmodels.HistorialViewModel
 
 @Composable
 fun PantallaHistorial(
+    // SIEMPRE
+    // Engancha el ViewModel de la lista
     historialViewModel: HistorialViewModel = viewModel(),
+    // CAMBIA
+    // Acción al pulsar un elemento (le pasamos su ID para ir al detalle)
     onPartidaClick: (String) -> Unit = {},
     onVolverClick: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
+    // SIEMPRE
+    // Lee el estado del ViewModel
     val uiState by historialViewModel.uiState.collectAsState()
 
     Column(
@@ -47,9 +53,13 @@ fun PantallaHistorial(
 
         Spacer(modifier = Modifier.height(8.dp))
 
+        // SIEMPRE (en pantallas de listado)
+        // Lista que solo dibuja lo que cabe en pantalla
         LazyColumn(
             modifier = Modifier.fillMaxSize()
         ) {
+            // CAMBIA
+            // Recorre la lista del ViewModel y pinta una tarjeta por cada elemento
             items(uiState.partidas) { partidaIndividual ->
                 TarjetaMesaHistorial(
                     state = TarjetaMesaHistorialState(
@@ -59,6 +69,8 @@ fun PantallaHistorial(
                         modo = partidaIndividual.modo,
                         ganadorNombre = partidaIndividual.ganadorNombre
                     ),
+                    // OJO
+                    // El clickable funciona gracias a que TarjetaMesaHistorial aplica el modifier en su raíz
                     modifier = Modifier.clickable {
                         onPartidaClick(partidaIndividual.id)
                     }

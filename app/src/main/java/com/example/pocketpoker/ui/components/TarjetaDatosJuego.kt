@@ -44,6 +44,7 @@ fun TarjetaDatosJuego(
                     fontWeight = FontWeight.Bold
                 )
             }
+            // CAMBIA: Filas de etiqueta + valor (usa .toString() si el dato es Int)
             Row(modifier = Modifier.padding(8.dp)){
                 Text(
                     text = stringResource(R.string.label_mayor_bote),

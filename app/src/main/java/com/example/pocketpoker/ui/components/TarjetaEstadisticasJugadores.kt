@@ -47,6 +47,8 @@ fun TarjetaEstadisticasJugadores(
             border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
         ) {
             Column(modifier = Modifier) {
+                // SIEMPRE (para pintar listas cortas dentro de una tarjeta que ya tiene scroll fuera):
+                // "forEachIndexed" da la posición (index: 0, 1, 2...) y el objeto (jugador).
                 state.jugadores.forEachIndexed { index, jugador ->
                     Row(
                         modifier = Modifier
@@ -61,6 +63,7 @@ fun TarjetaEstadisticasJugadores(
                             )
                         )
                         Spacer(modifier = Modifier.width(8.dp))
+
                         Text(
                             text = "${index + 1}.${jugador.nombre}",
                             color = MaterialTheme.colorScheme.onSurface,
@@ -74,6 +77,7 @@ fun TarjetaEstadisticasJugadores(
                             )
                         }
                         Spacer(modifier = Modifier.weight(1f))
+
                         Text(
                             text = jugador.fichasGanadasPerdidas.toString(),
                             color = if (jugador.fichasGanadasPerdidas >= 0)
@@ -83,6 +87,7 @@ fun TarjetaEstadisticasJugadores(
                             fontSize = 20.sp
                         )
                     }
+                    // SIEMPRE: Pinta una línea separadora entre filas, menos debajo de la última
                     if (index < state.jugadores.size - 1) {
                         HorizontalDivider(
                             modifier = Modifier.padding(horizontal = 12.dp),

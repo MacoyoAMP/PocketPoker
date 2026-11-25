@@ -1,4 +1,5 @@
 <resources>
+    <!--Todos los textos visibles de la app van aquí, nunca escritos a mano -->
     <string name="app_name">PocketPoker</string>
 
     <!-- Títulos de Pantallas y Cabeceras -->
@@ -9,7 +10,8 @@
     <string name="titulo_datos_juego">DATOS DE JUEGO</string>
     <string name="titulo_estadisticas_jugadores">ESTADÍSTICAS JUGADORES</string>
 
-    <!-- Tarjetas y Detalles -->
+    <!-- CAMBIA: "%1$s" es un hueco para meter un texto variable -->
+    <!-- Ejemplo: stringResource(R.string.label_mesa, "3") -> "MESA 3" -->
     <string name="label_mesa">MESA %1$s</string>
     <string name="label_bote_total">BOTE TOTAL</string>
     <string name="label_ganador">GANADOR</string>
@@ -26,7 +28,7 @@
     <string name="label_modo">MODO: </string>
     <string name="label_bote">BOTE: </string>
 
-    <!-- Accesibilidad -->
+    <!-- Accesibilidad (descripción de iconos e imágenes) -->
     <string name="cd_volver">Volver</string>
     <string name="cd_foto_perfil">Foto de perfil</string>
     <string name="cd_avatar_jugador">Avatar de %1$s</string>

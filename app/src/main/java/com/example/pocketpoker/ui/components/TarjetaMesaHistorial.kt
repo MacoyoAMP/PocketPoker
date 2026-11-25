@@ -27,6 +27,7 @@ fun TarjetaMesaHistorial(
     state: TarjetaMesaHistorialState,
     modifier: Modifier = Modifier
 ){
+    //El modifier va aquí en Card para que desde la pantalla se pueda poner ".clickable { ... }"
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -40,6 +41,7 @@ fun TarjetaMesaHistorial(
                 .fillMaxWidth()
                 .padding(14.dp)
         ) {
+            //Título principal de la tarjeta usando strings.xml con parámetro (%1$s)
             Text(
                 text = stringResource(R.string.label_mesa, state.numeroMesa),
                 color = MaterialTheme.colorScheme.primary,
@@ -47,6 +49,8 @@ fun TarjetaMesaHistorial(
                 fontWeight = FontWeight.Bold
             )
             Spacer(modifier = Modifier.padding(6.dp))
+
+            //Fila con un dato a la izquierda y otro a la derecha (SpaceBetween)
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween

@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pocketpoker.R
 import com.example.pocketpoker.ui.components.states.CabeceraState
-
 @Composable
 fun Cabecera(
     state: CabeceraState,
@@ -35,6 +34,7 @@ fun Cabecera(
             .padding(horizontal = 8.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
+        //(para botón de flecha atrás): Ejecuta la acción que viene en el state
         IconButton(onClick = state.onVolverClick) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,

@@ -30,6 +30,7 @@ fun TarjetaBoteGanador(
     state: TarjetaBoteGanadorState,
     modifier: Modifier = Modifier
 ){
+    //Si el componente envuelve varias cosas (título + Card), el modifier va en el Column raíz
     Column(modifier = modifier) {
         Row(modifier = Modifier) {
             CabeceraResumen(
@@ -78,6 +79,7 @@ fun TarjetaBoteGanador(
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
                     )
+                    // Empuja todo lo que va detrás hasta el borde derecho
                     Spacer(modifier = Modifier.weight(1f))
                     AvatarJugador(
                         state = AvatarJugadorState(

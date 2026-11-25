@@ -13,14 +13,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+// SIEMPRE
+// Evita repetir dos Text() juntos cada vez.
 @Composable
 fun TextoEtiquetaValor(
     etiqueta: String,
     valor: String,
     colorEtiqueta: Color = MaterialTheme.colorScheme.onSurfaceVariant,
-    colorValor: Color = MaterialTheme.colorScheme.onSurface
+    colorValor: Color = MaterialTheme.colorScheme.onSurface,
+    modifier: Modifier = Modifier
 ) {
-    Row {
+    Row(modifier = modifier) {
         Text(
             text = etiqueta,
             color = colorEtiqueta,

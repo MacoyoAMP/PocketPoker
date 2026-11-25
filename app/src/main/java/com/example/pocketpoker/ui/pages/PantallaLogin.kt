@@ -33,12 +33,19 @@ import com.example.pocketpoker.ui.viewmodels.LoginViewModel
 
 @Composable
 fun PantallaLogin(
+    // SIEMPRE
+    // Engancha el ViewModel del formulario
     loginViewModel: LoginViewModel = viewModel(),
     onLoginSuccess: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
+    // SIEMPRE
+    // Lee el estado actual (textos escritos y si hay error)
     val uiState by loginViewModel.uiState.collectAsState()
 
+    // SIEMPRE
+    // si se usa OutlinedTextField con tema oscuro:
+    // Colores para que se vea bien el texto y el borde
     val coloresCampo = OutlinedTextFieldDefaults.colors(
         focusedBorderColor = MaterialTheme.colorScheme.primary,
         unfocusedBorderColor = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -74,6 +81,8 @@ fun PantallaLogin(
 
         Spacer(modifier = Modifier.height(32.dp))
 
+        // SIEMPRE (en cajas de texto):
+        // "value" lee del uiState y "onValueChange" avisa al ViewModel de cada letra que se escribe.
         OutlinedTextField(
             value = uiState.usuario,
             onValueChange = { loginViewModel.onUsuarioChange(it) },
@@ -85,6 +94,7 @@ fun PantallaLogin(
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // "PasswordVisualTransformation()" oculta las letras con puntitos
         OutlinedTextField(
             value = uiState.contrasena,
             onValueChange = { loginViewModel.onContrasenaChange(it) },
@@ -95,6 +105,7 @@ fun PantallaLogin(
             modifier = Modifier.fillMaxWidth()
         )
 
+        // SIEMPRE (para mensajes de error): Solo se pinta si el ViewModel pone mostrarError = true
         if (uiState.mostrarError) {
             Spacer(modifier = Modifier.height(8.dp))
             Text(
@@ -106,6 +117,7 @@ fun PantallaLogin(
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // SIEMPRE: El botón delega la comprobación al ViewModel
         Button(
             onClick = { loginViewModel.intentarLogin(onSuccess = onLoginSuccess) },
             colors = ButtonDefaults.buttonColors(
